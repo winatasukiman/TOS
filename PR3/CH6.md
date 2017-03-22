@@ -8,3 +8,14 @@
 6.
  * gedit &
  * kill -SIGTOP 21578
+7.
+ * killall -SIGCONT gedit
+8.
+ * yum install xorg=xll-apps
+ * xeyes &
+ * xeyes &
+ * killall xeyes &
+9.
+ * nice -n 7 21578
+10.
+ * ps -ep 'pid,user,nice,comm'|grep gedit
