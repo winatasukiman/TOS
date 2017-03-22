@@ -11,7 +11,7 @@
 # are some additional functions to try in string2.py.
 
 
-# A. donuts
+# A. donuts question
 # Given an int count of a number of donuts, return a string
 # of the form 'Number of donuts: <count>', where <count> is the number
 # passed in. However, if the count is 10 or more, then use the word 'many'
@@ -27,7 +27,7 @@ def donuts(count):
   return don
 
 
-# B. both_ends
+# B. both_ends question
 # Given a string s, return a string made of the first 2
 # and the last 2 chars of the original string,
 # so 'spring' yields 'spng'. However, if the string length
