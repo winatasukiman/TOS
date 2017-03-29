@@ -1,4 +1,4 @@
-# Catatan
+# command
 * String menggunakan namaavar = set("")
 * Array menggunakan []
 * if diakhiri :
