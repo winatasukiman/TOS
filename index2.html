@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="jmobile/jquery.mobile-1.4.5.min.css">
+    <script type="text/javascript" src="jmobile/jquery.min.jss"></script>
+    <script type="text/javascript" src="jmobile/jquery.mobile-1.4.5.min.js"></script>
+	<script src=jmobile/demos/js/jquery.min.js></script>
+	<script src=jmobile/jquery.mobile-1.4.5.js></script>
+    <title>jQuery Mobile</title>
+
+    <style>
+        @media all and (max-width: 35em) {
+            .my-breakpoint .ui-block-a,
+            .my-breakpoint .ui-block-b,
+            .my-breakpoint .ui-block-c,
+            .my-breakpoint .ui-block-d,
+            .my-breakpoint .ui-block-e {
+                width: 100%;
+                float: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page" id="kalkulator" data-theme="b">
+        <div data-role="header">
+				<h5>KALKULATOR</h5>
+			</div>
+
+			<div data-role="content">
+				<form class="TextCenter">
+					Number to Convert:
+					<input type="number" id="number"/>
+					<br><br>
+					<button type="button" onclick="ConvertBase.dec2bin()"/>Change to Binary</button>
+					<button type="button" onclick="ConvertBase.dec2hex()"/>Change to HexaDecimal</button>
+				</form>
+
+        <div data-role="footer" data-add-back-btn="true">
+            <fieldset data-role="controlgroup">
+                <legend>Menu:</legend>
+                <label for="select-native-5">Menu</label>
+                <select name="select-native-5" class="menu">
+                    <option value="#kalkulator">Kalkulator</option>
+                    <option value="#rgb">RGB</option>
+                    <option value="#rangkuman">Rangkuman</option>
+                </select>
+            </fieldset>
+        </div>
+
+    </div>
+
+    <div data-role="page" id="rgb" data-theme="b">
+        <div data-role="header" data-add-back-btn="true">
+            <h1>Change Color</h1>
+        </div>
+		<div data-role="content">
+
+            <div class="ui-grid-b">
+                <div class="ui-block-a">
+                    <label for="r">Red:</label>
+                    <input type="range" id="r" min="0" max="255" value="0">
+                </div>
+
+                <div class="ui-block-b">
+                    <label for="g">Green:</label>
+                    <input type="range" id="g" min="0" max="255" value="0">
+                </div>
+
+                <div class="ui-block-c">
+                    <label for="b">Blue:</label>
+                    <input type="range" id="b" min="0" max="255" value="0">
+                </div>
+            </div>
+
+            <button data-theme="b" class="key" id="color">Colorize</button>
+
+            <label for="result">Result:</label>
+            <input type="text" id="result" value="" disabled>
+            
+        </div>
+        
+        <div data-role="footer" data-add-back-btn="true">
+            <fieldset data-role="controlgroup">
+                <legend>Menu:</legend>
+                <label for="select-native-5">Menu</label>
+                <select name="select-native-5" class="menu">
+                    <option value="#kalkulator">Kalkulator</option>
+                    <option value="#rgb">RGB</option>
+                    <option value="#rangkuman">Rangkuman</option>
+                </select>
+            </fieldset>
+        </div>
+
+    </div>
+
+    <div data-role="page" id="rangkuman" data-theme="b">
+        <div data-role="header" data-add-back-btn="true">
+            <h1>Summary lesson before Test 1</h1>
+        </div>
+
+        <div data-role="content">
+			<ol data-role="listview">
+				<li>Git Hub</li>
+				<li>JQM</li>
+				<li>Angular</li>
+			</ol>
+				<h5>Git Hub</h5>
+				<p>Keunggulan :</p>
+				<p>Repository Syncing,Bekerja secara offline,Cheal local branching,Staging Area yang nyaman,Mampu menangani proyek besar secara efektif (Kecepatan & Ukuran Data)</p>
+				<p>Membuat Folder,mkdir latihan-git,Inisialisasi  git init,Cek Status  git status,Commit  git commit –m “Keterangan”,Memisahkan berkas yang sudah ada  git branch nama_branch,Melihat branch  git branch,Pindah branch git checkout</p>
+				<h5>JQM</h5>	
+				<p>jQuery Mobile adalah framework yang dibangun di atas jQuery, menyediakan berbagai elemen User-interface dan fitur-fitur untuk digunakan dalam aplikasi mobile.</p>
+				<p>Is an attribute of HTML element,Used by jQuery UI and jQuery Mobile,Gives appearance to elements,Through jQuery executed in the HTML page init,Give native look and feel,Based on the OS of the device,Used to make elements look like buttons, pages, menus etc... </p>
+				<p>dan untuk contoh-contoh yang lainnya kalian bisa lihat di website dari jQuery mobile</p>
+				<h5>Angular</h5>
+				<p>Download angular js dari www.angularjs.org</p>
+				<p>Penulisan di angular juga berbeda dari html biasa</p>
+				
+			
+        </div>
+
+        <div data-role="footer" data-add-back-btn="true">
+            <fieldset data-role="controlgroup">
+                <legend>Menu:</legend>
+                <label for="select-native-5">Menu</label>
+                <select name="select-native-5" class="menu">
+                    <option value="#kalkulator">Kalkulator</option>
+                    <option value="#rgb">RGB</option>
+                    <option value="#rangkuman">Rangkuman</option>
+                </select>
+            </fieldset>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+
+        $("#color").click(function(){
+                $("#result").css("background-color", `rgb(${$("#r").val()},${$("#g").val()},${$("#b").val()})`);
+            });
+
+        $(document).ready(function(){
+            $(".menu").change(function(){
+                window.location = $(this).val();
+            });
+
+            
+        });
+	
+	function hitung()
+	
+	function(){
+
+			var ConvertBase = function (num) {
+				return {
+					from : function (baseFrom) {
+						return {
+							to : function (baseTo) {
+								return parseInt(num, baseFrom).toString(baseTo);
+							}
+						};
+					}
+				};
+			};
+			
+			ConvertBase.dec2bin = function () {
+				if(document.getElementById("number").value!=""){
+					alert(ConvertBase(document.getElementById('number').value).from(10).to(2));
+				}else{alert("Please fill the number")}
+			};
+			
+			ConvertBase.dec2hex = function () {
+				if(document.getElementById("number").value!=""){
+					alert(ConvertBase(document.getElementById('number').value).from(10).to(16));
+				}else{alert("Please fill the number")}
+			};
+			
+			
+			this.ConvertBase = ConvertBase;
+		
+		})(this);
+		var n1 = parseInt($("#txt1").val());
+		var n2 = "";
+		alert(n1);
+		while(n1>0)
+		{
+			var h =n1/16;
+			var s = n1%16;
+			if(h==10)
+			{
+				n2="A"+n2;
+			}
+			else if(h==11)
+			{
+				n2="B"+n2;
+			}
+			else if(h==12)
+			{
+				n2="C"+n2;
+			}
+			else if(h==13)
+			{
+				n2="D"+n2;
+			}
+			else if(h==14)
+			{
+				n2="E"+n2;
+			}
+			else if(h==15)
+			{
+				n2="F"+n2;
+			}
+			else
+			{
+				n2 = h + "" +n2;
+			}
+			n1 = s ;
+		}
+		alert(n2);
+		$("#txt2").val(n2);
+	}
+	$( document ).on( "click", ".show-page-loading-msg", function() {
+    var $this = $( this ),
+        theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
+        msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
+        textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
+        textonly = !!$this.jqmData( "textonly" );
+        html = $this.jqmData( "html" ) || "";
+    $.mobile.loading( "show", {
+            text: msgText,
+            textVisible: textVisible,
+            theme: theme,
+            textonly: textonly,
+            html: html
+    });
+})
+.on( "click", ".hide-page-loading-msg", function() {
+    $.mobile.loading( "hide" );
+});
+    </script>
+
+</body>
+</html>

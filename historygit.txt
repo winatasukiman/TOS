@@ -1,0 +1,12 @@
+login pada github
+masuk ke repo yang ingin dimasukkan file
+klik upload file
+pilih file yang mau diupload
+isi commit changes
+kemudian commit changes
+
+untuk collaborator
+masuk repo
+buka setting
+pilih contributor
+masukkan email yang ingin di add
